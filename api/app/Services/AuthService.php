@@ -45,7 +45,7 @@ class AuthService
             throw new UserHasBeenTakenException('Email já cadastrado.');
         }
 
-        $userPassword = bcrypt(Str::random(10));
+        $userPassword = bcrypt($password);
 
         $user = \App\User::create([
             'first_name' => $firstName,
