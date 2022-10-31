@@ -6,9 +6,9 @@ use App\Exceptions\UserHasBeenTakenException;
 
 class UserService
 {
-    public function update(\App\User $user, array $input)
+    public function update(\App\Models\User $user, array $input)
     {
-        if (!empty($input['email'] && \App\User::where('email', $input['email'])->exists())) {
+        if (!empty($input['email'] && \App\Models\User::where('email', $input['email'])->exists())) {
             throw new UserHasBeenTakenException();
         }
 

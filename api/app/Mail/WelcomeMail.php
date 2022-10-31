@@ -18,7 +18,7 @@ class WelcomeMail extends Mailable
      *
      * @return void
      */
-    public function __construct(\App\User $user)
+    public function __construct(\App\Models\User $user)
     {
         $this->user = $user;
     }
@@ -31,9 +31,9 @@ class WelcomeMail extends Mailable
     public function build()
     {
         return $this->view('emails.welcome')
-            ->subject('Bem-vindo ao ' . config('app.name'))
+            ->subject('Bem-vindo à ' . config('app.name'))
             ->with([
-                'verifyEmailLink' => config('app.url') . '/verify-email?token=' . $this->user->confirmation_token
+                'verifyEmailLink' => config('app.url') . '/v1/verify-email?token=' . $this->user->confirmation_token
             ]);
     }
 }

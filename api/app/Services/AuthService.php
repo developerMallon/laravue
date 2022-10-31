@@ -39,7 +39,7 @@ class AuthService
 
     public function register(string $firstName, string $lastName, string $email, string $password)
     {
-        $user = \App\User::where('email', $email)->exists();
+        $user = \App\Models\User::where('email', $email)->exists();
 
         if (!empty($user)) {
             throw new UserHasBeenTakenException('Email já cadastrado.');
@@ -47,7 +47,7 @@ class AuthService
 
         $userPassword = bcrypt($password);
 
-        $user = \App\User::create([
+        $user = \App\Models\User::create([
             'first_name' => $firstName,
             'last_name' => $lastName,
             'email' => $email,
@@ -62,7 +62,7 @@ class AuthService
 
     public function verifyEmail(string $token)
     {
-        $user = \App\User::where('confirmation_token', $token)->first();
+        $user = \App\Models\User::where('confirmation_token', $token)->first();
 
         if (empty($user)) {
             throw new VerifyEmailTokenInvalidException();
@@ -77,7 +77,7 @@ class AuthService
 
     public function forgotPassword(string $email)
     {
-        $user = \App\User::where('email', $email)->firstOrFail();
+        $user = \App\Models\User::where('email', $email)->firstOrFail();
 
         $token = Str::random(60);
 
@@ -99,7 +99,7 @@ class AuthService
             throw new \App\Exceptions\ResetPasswordTokenInvalidException();
         }
 
-        $user = \App\User::where('email', $email)->firstOrFail();
+        $user = \App\Models\User::where('email', $email)->firstOrFail();
         $user->password = bcrypt($password);
         $user->save();
 

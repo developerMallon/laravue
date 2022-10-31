@@ -1,6 +1,7 @@
 <p>Olá {{ $user->first_name }},</p>
 
-<p>Seja bem-vindo(a) ao {{ config('app.name')}}. Por favor, verifique seu e-mail clicando no link abaixo.</p>
+<p>Seja bem-vindo(a) à {{ config('app.name')}}. <br>
+    Por favor, confirme seu e-mail clicando no link abaixo.</p>
 
 <table role="presentation" border="0" cellspacing="0" class="btn btn-primary">
     <tbody>
@@ -18,5 +19,5 @@
     </tbody>
 </table>
 
-<p>Ou, simplesmente copie e cole o link abaixo em seu navegador</p>
+<p>Ou, simplesmente copie e cole o link abaixo em seu navegador.</p>
 <p>Link para validação: {{ $verifyEmailLink }}</p>

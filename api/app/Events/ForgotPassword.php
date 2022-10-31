@@ -22,7 +22,7 @@ class ForgotPassword
      *
      * @return void
      */
-    public function __construct(\App\User $user, string $token)
+    public function __construct(\App\Models\User $user, string $token)
     {
         $this->user = $user;
         $this->token = $token;

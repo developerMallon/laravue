@@ -21,7 +21,7 @@ class UserRegistered
      *
      * @return void
      */
-    public function __construct(\App\User $user)
+    public function __construct(\App\Models\User $user)
     {
         $this->user = $user;
     }
