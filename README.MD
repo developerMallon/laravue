@@ -19,3 +19,5 @@ Obs.: You should now have a config/jwt.php file that allows you to configure the
 
 30/10/2022 - API REFEITA, TESTADO ATÉ VERIFICAÇÃO DE EMAIL E LOGIN
              (VERIFICAR PORQUE NÃO ESTÁ EXIBINDO O TOKEN NO JSON DO RETORNO DO LOGIN)
+
+31/10/2022 16:11 - Corrigido o JWT... Login ok
