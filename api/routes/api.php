@@ -12,7 +12,7 @@ Route::prefix('v1')->group(function () {
     Route::post('register', [\App\Http\Controllers\AuthController::class, 'register']);
     Route::get('verify-email', [\App\Http\Controllers\AuthController::class, 'verifyEmail']);
     Route::post('forgot-password', [\App\Http\Controllers\AuthController::class, 'forgotPassword']);
-    Route::post('reset-password', [\App\Http\Controllers\AuthController::class, 'resetPassword']);
+    Route::get('reset-password', [\App\Http\Controllers\AuthController::class, 'resetPassword']);
 
     Route::prefix('me')->group(function () {
         Route::get('', [\App\Http\Controllers\MeController::class, 'index']);

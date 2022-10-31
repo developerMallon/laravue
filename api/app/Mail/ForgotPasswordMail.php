@@ -36,7 +36,7 @@ class ForgotPasswordMail extends Mailable
         return $this->view('emails.forgot_password')
             ->subject('Alteração de senha.')
             ->with([
-                'resetPasswordLink' => config('app.url') . '/recuperar-senha?token=' . $this->token,
+                'resetPasswordLink' => config('app.url') . '/v1/reset-password?token=' . $this->token,
             ]);
     }
 }

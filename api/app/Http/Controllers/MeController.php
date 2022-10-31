@@ -20,9 +20,9 @@ class MeController extends Controller
     }
 
     public function update(MeUpdateRequest $request)
-    {
+    {   
         $input = $request->validated();
-        $user = (new UserService)->update(auth()->user(), $input);
+        $user = (new UserService())->update(auth()->user(), $input);
 
         return new UserResource($user);
     }

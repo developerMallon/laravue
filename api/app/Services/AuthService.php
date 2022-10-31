@@ -8,7 +8,7 @@ use App\Exceptions\UserHasBeenTakenException;
 use Illuminate\Support\Str;
 use App\Events\UserRegistered;
 use App\Exceptions\VerifyEmailTokenInvalidException;
-use App\PasswordReset;
+use App\Models\PasswordReset;
 use Exception;
 
 class AuthService
@@ -92,7 +92,7 @@ class AuthService
     }
 
     public function resetPassword(string $email, string $password, string $token)
-    {
+    {   
         $passReset = PasswordReset::where('email', $email)->where('token', $token)->first();
 
         if (empty($passReset)) {
