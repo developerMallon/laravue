@@ -18,6 +18,12 @@ class AuthController extends Controller
         $this->authService = $authService;
     }
 
+    public function all()
+    {
+        $users = \App\Models\User::all();
+        return $users;
+    }
+
     /**
      * Login function
      *
