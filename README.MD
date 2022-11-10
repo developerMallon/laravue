@@ -19,3 +19,6 @@ Obs.: You should now have a config/jwt.php file that allows you to configure the
 
 30/10/2022 - API REFEITA, TESTADO ATÉ VERIFICAÇÃO DE EMAIL E LOGIN
              (VERIFICAR PORQUE NÃO ESTÁ EXIBINDO O TOKEN NO JSON DO RETORNO DO LOGIN)
+
+09/11/2022 - Testes, adicionado rota que lista todos os usuários cadastrados
+             Projeto importado pro note developermallon
