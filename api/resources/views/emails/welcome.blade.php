@@ -1,4 +1,4 @@
-<p>Olá {{ $user->first_name }},</p>
+<p>Olá {{ $user->username }},</p>
 
 <p>Seja bem-vindo(a) à {{ config('app.name')}}. <br>
     Por favor, confirme seu e-mail clicando no link abaixo.</p>

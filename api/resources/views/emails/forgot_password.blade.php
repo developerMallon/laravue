@@ -1,4 +1,4 @@
-<p>Olá {{ $user->first_name }},</p>
+<p>Olá {{ $user->username }},</p>
 
 <p>Você requisitou a alteração de senha da sua conta {{ config('app.name')}}. Por favor, clique no link abaixo.</p>
 

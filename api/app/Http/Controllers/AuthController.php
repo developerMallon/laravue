@@ -36,9 +36,8 @@ class AuthController extends Controller
     public function Register(AuthRegisterRequest $request)
     {
         $input = $request->validated();
-
-        $user = $this->authService->register($input['first_name'], $input['last_name'] ?? '', $input['email'], $input['password']);
-
+        $user = $this->authService->register($input['first_name'], $input['last_name'], $input['branche'], $input['email'], $input['phone'], $input['password']);
+        
         return new UserResource($user);
     }
 
@@ -65,5 +64,10 @@ class AuthController extends Controller
         $input = $request->validated();
 
         return $this->authService->resetPassword($input['email'], $input['password'], $input['token']);
+    }
+
+    public function logout()
+    {
+        return $this->authService->logout();
     }
 }

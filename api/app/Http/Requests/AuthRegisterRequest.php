@@ -25,8 +25,10 @@ class AuthRegisterRequest extends FormRequest
     {
         return [
             'first_name' => 'required|string',
-            'last_name' => 'string|nullable',
+            'last_name' => 'required|string',
+            'branche' => 'required|string',
             'email' => 'required|email',
+            'phone' => 'required|string',
             'password' => 'required|string|min:8|max:30|regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).+$/'
         ];
     }

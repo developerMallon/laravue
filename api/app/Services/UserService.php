@@ -8,8 +8,7 @@ class UserService
 {
     public function update(\App\Models\User $user, array $input)
     {   
-        
-        if (!empty($input['email'] && \App\Models\User::where('email', $input['email'])) && $user->email !== $input['email']) {
+        if (!empty($input['email']) && \App\Models\User::where('email', $input['email'])->exists() && $user->email !== $input['email']) {
             throw new UserHasBeenTakenException();
         }
         

@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('test', function () {
-    return response()->json(['message' => 'LaraVue say Hello World.']);
+    return response()->json(['origem' => 'Intranet Mallon Concessionária.']);
 });
 
 Route::prefix('v1')->group(function () {
@@ -13,7 +13,8 @@ Route::prefix('v1')->group(function () {
     Route::get('verify-email', [\App\Http\Controllers\AuthController::class, 'verifyEmail']);
     Route::post('forgot-password', [\App\Http\Controllers\AuthController::class, 'forgotPassword']);
     Route::get('reset-password', [\App\Http\Controllers\AuthController::class, 'resetPassword']);
-
+    Route::post('logout', [\App\Http\Controllers\AuthController::class, 'logout']);
+    
     Route::prefix('me')->group(function () {
         Route::get('', [\App\Http\Controllers\MeController::class, 'index']);
         Route::put('', [\App\Http\Controllers\MeController::class, 'update']);

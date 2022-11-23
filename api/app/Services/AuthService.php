@@ -37,7 +37,7 @@ class AuthService
         ];
     }
 
-    public function register(string $firstName, string $lastName, string $email, string $password)
+    public function register(string $first_name, string $last_name, string $branche, string $email, string $phone, string $password)
     {
         $user = \App\Models\User::where('email', $email)->exists();
 
@@ -48,13 +48,15 @@ class AuthService
         $userPassword = bcrypt($password);
 
         $user = \App\Models\User::create([
-            'first_name' => $firstName,
-            'last_name' => $lastName,
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'branche' => $branche,
             'email' => $email,
+            'phone' => $phone,
             'password' => $userPassword,
             'confirmation_token' => Str::random(60)
         ]);
-
+        
         event(new UserRegistered($user));
 
         return $user;
@@ -105,6 +107,16 @@ class AuthService
 
         PasswordReset::where('email', $email)->delete();
 
-        return '';
+        return response()->json(['message' => 'Senha atualizada com sucesso.']);
+    }
+
+    public function logout()
+    {
+        // Pass true to force the token to be blacklisted "forever"
+        auth()->logout(true);
+
+        return response()->json([
+            "message" => "Logout efetuado com sucesso"
+        ], 200);
     }
 }

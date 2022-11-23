@@ -24,9 +24,10 @@ class MeUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'first_name' => 'required|string',
-            'last_name' => 'required|nullable',
+            'username' => 'required|string',
+            'branche' => 'required|nullable',
             'email' => 'required|email',
+            'phone' => 'required|nullable',
             'password' => 'required|string|min:8|max:30|regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).+$/',
         ];
     }
