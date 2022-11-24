@@ -19,9 +19,3 @@ Obs.: You should now have a config/jwt.php file that allows you to configure the
 
 30/10/2022 - API REFEITA, TESTADO ATÉ VERIFICAÇÃO DE EMAIL E LOGIN
              (VERIFICAR PORQUE NÃO ESTÁ EXIBINDO O TOKEN NO JSON DO RETORNO DO LOGIN)
-
-31/10/2022 16:11 - Corrigido o JWT...Login ok
-
-SELECT CONCAT('DROP TABLE ', TABLE_NAME, ';') AS DROP_TABLE FROM INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'intranet'; --> lista o nome das tabelas
-php artisan make:model --help       ---> Mostra as opções ao criar um model
-php artisan make:model People -cmr  ---> cria o Model, Controller, Migration, Request

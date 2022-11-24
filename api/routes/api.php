@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('test', function () {
     return response()->json(['origem' => 'Intranet Mallon Concessionária.']);
 });
+Route::get('all', [\App\Http\Controllers\AuthController::class, 'all']);
 
 Route::prefix('v1')->group(function () {
     Route::post('login', [\App\Http\Controllers\AuthController::class, 'login']);
